@@ -14,11 +14,19 @@ export const withdraw = (_id, amount) => {
         }
     };
 };
-export const newAccount = (name,amount) => {
+export const newAccount = (name,balance) => {
     return{
         type: 'ADD_NEW_ACCOUNT',
         payload: {
-            name,amount
+            name,balance
+        }
+    };
+};
+export const deleteAccount = (_id) => {
+    return{
+        type: 'DELETE_ACCOUNT',
+        payload: {
+            _id
         }
     };
 };

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { deposit } from '../actions';
 import { withdraw } from '../actions';
+import { deleteAccount } from "../actions";
 
 class AccountList extends React.Component {
 
@@ -34,12 +35,15 @@ class AccountList extends React.Component {
                    <div className="card-body">
                        <h5 className="card-title">Account # { acc._id}</h5>
                        <h6 className="card-subtitle mb-2 text-muted">Name: {acc.name}</h6>
-                       <h6 className="card-subtitle mb-2 text-muted">Balance: <h6 class="text-primary" style={{display:'inline'}}>${acc.balance.toFixed(2)}</h6></h6>
+                       <h6 className="card-subtitle mb-2 text-muted">Balance: <h6 class="text-primary" style={{display:'inline'}}>${acc.balance}</h6></h6>
                         <button type='button' onClick={() => {this.props.deposit(acc._id,10)}} className="btn btn-success">
                         Deposit $10
                         </button>
                        <button type='button' onClick={() => {this.props.withdraw(acc._id,10)}} className="btn btn-danger" style={{marginLeft: '10px'}}>
                         Withdraw $10
+                       </button><br/>
+                       <button type='button' onClick={() => {this.props.deleteAccount(acc._id)}} className="btn btn-warning" style={{marginTop: '10px'}}>
+                           Delete Account
                        </button>
                    </div>
                </div>
@@ -78,4 +82,4 @@ const mapStateToProps = state => {
     }
 
 };
-export default connect(mapStateToProps, {deposit, withdraw}) (AccountList);
+export default connect(mapStateToProps, {deposit, withdraw, deleteAccount}) (AccountList);

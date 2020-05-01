@@ -52,7 +52,8 @@ const accountsReducer = (state, action) => {
 
             return sortAccounts(state);
         case 'ADD_NEW_ACCOUNT':
-            let name = action.payload.name;
+            console.log(action.payload);
+            let name = action.payload;
             name._id = state.accounts.length + 1;
             name.balance = action.payload.balance;
 
