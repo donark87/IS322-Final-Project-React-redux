@@ -9,6 +9,8 @@ class App extends React.Component {
         view: 'page1',
     }
 
+
+
     onViewChange(view) {
         this.setState({ view });
     }
