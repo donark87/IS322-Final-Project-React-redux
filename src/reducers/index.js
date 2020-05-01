@@ -52,7 +52,7 @@ const accountsReducer = (state, action) => {
 
             return sortAccounts(state);
         case 'ADD_NEW_ACCOUNT':
-            console.log(action.payload);
+
             let name = action.payload;
             name._id = state.accounts.length + 1;
             name.balance = action.payload.balance;
@@ -60,6 +60,13 @@ const accountsReducer = (state, action) => {
             state.accounts.push(name);
 
             return sortAccounts(state);
+        case 'DELETE_ACCOUNT':
+            const currentIdDetele = state.accounts.findIndex(acc => {
+                return acc._id === action.payload._id;});
+            state.accounts.splice(currentIdDetele, 1);
+
+            return sortAccounts(state);
+
 
         default :
             return !state ? DEFAULT_STATE : state;
