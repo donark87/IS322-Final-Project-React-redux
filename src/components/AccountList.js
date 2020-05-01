@@ -60,7 +60,7 @@ class AccountList extends React.Component {
     render() {
         let accountListOdd = this.renderList(1);
         let accountListEven = this.renderList(2);
-        console.log(this.props);
+
         return <div>
             <ul className="list-group list-group-horizontal" >
                 <li className="list-group-item list-group-item-secondary" ><ul className="list-group" style={{listStyleType:'none'}}> <li>{ accountListOdd }</li></ul> </li>

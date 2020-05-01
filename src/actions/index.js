@@ -1,3 +1,17 @@
+
+
+
+
+export const setAccounts = accounts => {
+
+    return {
+        type: 'SET_ACCOUNTS',
+        payload: {
+            accounts
+        }
+    }
+};
+
 export const deposit = (_id, amount) => {
     return {
         type: 'DEPOSIT_MONEY',

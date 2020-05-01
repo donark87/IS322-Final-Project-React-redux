@@ -10,7 +10,7 @@ class AddNewAccount extends React.Component {
         event.preventDefault();
         this.props.newAccount(this.state.name,this.state.balance);
         this.setState({name:'',balance:''})
-    }
+    };
 
 
     render() {

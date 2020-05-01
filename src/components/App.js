@@ -1,15 +1,33 @@
 import React from 'react';
+import axios from 'axios';
+import { connect } from 'react-redux';
 
 import AccountList from "./AccountList";
 import PageTabs from "./PageTab";
 import AddNewAccount from "./AddNewAccount";
+import { setAccounts } from "../actions";
+
+
 class App extends React.Component {
 
     state = {
         view: 'page1',
+    };
+
+    componentDidMount() {
+
+        this.getData();
+
     }
 
+    getData() {
+        axios.get('http://my-json-server.typicode.com/donark87/IS322-Final-Project-React-redux/accounts')
+            .then(response => {
+                this.props.setAccounts(response.data);
+            }).catch(error => {
 
+        });
+    }
 
     onViewChange(view) {
         this.setState({ view });
@@ -53,4 +71,10 @@ class App extends React.Component {
     }
 
 }
-export default App;
+const mapStateToProps = (state) => {
+    return {
+        errorMessage: state.errors
+    };
+};
+
+export default connect(mapStateToProps, { setAccounts })(App);

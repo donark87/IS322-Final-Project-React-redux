@@ -3,7 +3,7 @@ import { combineReducers } from "redux";
 
 const DEFAULT_STATE = {
     accounts: [
-        { "_id": 1, "name": "Lannisters", "balance": 1189.78 },
+       /*{ "_id": 1, "name": "Lannisters", "balance": 1189.78 },
         { "_id": 2, "name": "Starks", "balance": 567.71 },
         { "_id": 3, "name": "Baratheons", "balance": 31.26 },
         { "_id": 4, "name": "Targaryens", "balance": 34.75 },
@@ -12,9 +12,10 @@ const DEFAULT_STATE = {
         { "_id": 7, "name": "Martells", "balance": 737.90 },
         { "_id": 8, "name": "Tullys", "balance": 483.56 },
         { "_id": 9, "name": "Arryns", "balance": 1035.83 },
-        { "_id": 10, "name": "Free Folk", "balance": -134.34 }
+        { "_id": 10, "name": "Free Folk", "balance": -134.34 }*/
     ]
 };
+
 
 const sortAccounts = (state) => {
   let newState = {
@@ -30,8 +31,11 @@ const sortAccounts = (state) => {
 
 
 
-const accountsReducer = (state, action) => {
+const accountsReducer = (state= DEFAULT_STATE, action) => {
     switch(action.type) {
+        case 'SET_ACCOUNTS':
+
+            return action.payload;
 
         case 'DEPOSIT_MONEY':
             let currentIdDeposit = state.accounts.findIndex(acc => {
@@ -68,8 +72,9 @@ const accountsReducer = (state, action) => {
             return sortAccounts(state);
 
 
+
         default :
-            return !state ? DEFAULT_STATE : state;
+            return state;
     }
 
 };
