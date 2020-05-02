@@ -12,6 +12,6 @@
     { "_id": 10, "name": "Free Folk", "balance": -134.00 }
   ],
   "transaction":[
-        { "_id": 1, "name": "", "amount": 0  },
+        { "_id": 1, "name": "", "amount": 0  }
     ]
 }
