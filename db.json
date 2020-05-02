@@ -11,7 +11,7 @@
     { "_id": 9, "name": "Arryns", "balance": 1035.00 },
     { "_id": 10, "name": "Free Folk", "balance": -134.00 }
   ],
-  "transaction":[
-        { "_id": 1, "name": "", "amount": 0  }
+  "transaction": [
+        { "_id": 1, "accountId": 1, "type": "deposit", "amount": 677.40, "name": "Account Opened"  }
     ]
 }
