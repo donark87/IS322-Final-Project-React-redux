@@ -10,5 +10,8 @@
     { "_id": 8, "name": "Tullys", "balance": 483.00 },
     { "_id": 9, "name": "Arryns", "balance": 1035.00 },
     { "_id": 10, "name": "Free Folk", "balance": -134.00 }
-  ]
+  ],
+  "transaction":[
+        { "_id": 1, "name": "", "amount": 0  },
+    ]
 }
