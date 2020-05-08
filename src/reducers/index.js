@@ -39,20 +39,20 @@ const accountsReducer = (state= DEFAULT_STATE, action) => {
 
         case 'DEPOSIT_MONEY':
             let currentIdDeposit = state.accounts.findIndex(acc => {
-               return acc._id === action.payload._id;
+               return acc._id == action.payload._id;
             });
 
-           state.accounts[currentIdDeposit].balance = state.accounts[currentIdDeposit].balance + action.payload.amount;
+           state.accounts[currentIdDeposit].balance = state.accounts[currentIdDeposit].balance + parseInt(action.payload.amount);
 
            return sortAccounts(state);
 
           //  break;
         case 'WITHDRAW_MONEY':
             let currentIdWithdraw = state.accounts.findIndex(acc => {
-                return acc._id === action.payload._id;
+                return acc._id == action.payload._id;
             });
 
-            state.accounts[currentIdWithdraw].balance = state.accounts[currentIdWithdraw].balance - action.payload.amount;
+            state.accounts[currentIdWithdraw].balance = state.accounts[currentIdWithdraw].balance - parseInt(action.payload.amount);
 
             return sortAccounts(state);
         case 'ADD_NEW_ACCOUNT':

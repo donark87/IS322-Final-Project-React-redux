@@ -31,7 +31,13 @@ class PageTabs extends React.Component {
                 <li className='nav-item'>
                     <a className={this.isActiveTab('page3')}
                        onClick={(e) => this.onTabClick(e, 'page3')}>
-                        Transactions
+                        Deposit Money
+                    </a>
+                </li>
+                <li className='nav-item'>
+                    <a className={this.isActiveTab('page4')}
+                       onClick={(e) => this.onTabClick(e, 'page4')}>
+                        Withdraw Money
                     </a>
                 </li>
             </ul>

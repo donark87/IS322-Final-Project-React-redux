@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import AccountList from "./AccountList";
 import PageTabs from "./PageTab";
 import AddNewAccount from "./AddNewAccount";
+import Deposit from "./Deposit";
+import Withdraw from "./Withdraw";
 import { setAccounts } from "../actions";
 
 
@@ -60,7 +62,11 @@ class App extends React.Component {
                 ));
             case 'page3':
                 return (this.wrapPage(
-                    <h5>Transaction</h5>
+                    <Deposit />
+                ));
+            case 'page4':
+                return (this.wrapPage(
+                    <Withdraw />
                 ));
             default:
                 return (this.wrapPage(

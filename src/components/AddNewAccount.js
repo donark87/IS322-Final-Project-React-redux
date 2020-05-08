@@ -18,7 +18,7 @@ class AddNewAccount extends React.Component {
         return(
 
             <div>
-                <h2>Add New Accountk</h2>
+                <h2>Add New Account</h2>
                 <form className="form-group" onSubmit={this.onFormSubmit}>
                     <div className="form-group">
                         <label htmlFor="name">Account Holder's Name</label>
